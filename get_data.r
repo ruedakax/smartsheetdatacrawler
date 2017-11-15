@@ -3,7 +3,7 @@ library("httr", lib.loc="~/R/R-3.4.1/library")
 
 #Auth call using the Smartsheet private key. 
 r <- GET("https://api.smartsheet.com/2.0/sheets"
-         ,add_headers(Authorization = "Bearer 3new9i15lvjmi4t8y7ew0n65pa"),accept_json()
+         ,add_headers(Authorization = "Bearer xxxxxxxxxxxxxxxxxxxxxxxxx"),accept_json()
      )
 #get the response content
 proyectos <- content(r, "parsed")[[5]]
@@ -22,7 +22,7 @@ for(unproyecto in proyectos){
   
   #call to get the smartsheet project
   r2 <- GET(paste("https://api.smartsheet.com/2.0/sheets/",id_proyecto,sep = "")
-            ,add_headers(Authorization = "Bearer 3new9i15lvjmi4t8y7ew0n65pa"),accept_json()
+            ,add_headers(Authorization = "Bearer xxxxxxxxxxxxxxxxxxxxxxxxx"),accept_json()
   )
   #get the columns from response 
   columnas <- content(r2, "parsed")$columns
